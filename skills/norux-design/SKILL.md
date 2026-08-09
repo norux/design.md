@@ -37,6 +37,7 @@ pnpm check
 ```
 
 Run `pnpm registry:validate` after changing its `registry.json`. Run `pnpm artifacts:check` after changing its `DESIGN.md`.
+Run `pnpm consumers:preview` before a consumer-visible release when that script exists; publishing the reviewed GitHub Release performs the real notification.
 
 ## Brand and scope
 

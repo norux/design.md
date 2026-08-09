@@ -13,6 +13,7 @@
     "brand:export": "tsx scripts/export-brand.ts",
     "check": "pnpm design:lint && pnpm contrast && pnpm artifacts:check && pnpm registry:validate && pnpm typecheck && pnpm test && pnpm brand:check",
     "check:ci": "pnpm design:lint && pnpm contrast && pnpm artifacts:check && pnpm registry:validate && pnpm typecheck && pnpm test",
+    "consumers:preview": "tsx scripts/notify-consumers.ts --dry-run",
     "contrast": "tsx scripts/check-contrast.ts",
     "design:lint": "design.md lint DESIGN.md",
     "generate": "tsx scripts/generate-tokens.ts && tsx scripts/generate-skill-reference.ts",

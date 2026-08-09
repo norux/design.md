@@ -33,7 +33,7 @@ See the [release policy](./docs/release-policy.md) and the focused [`norux/dev` 
 
 ## Release
 
-After `pnpm check` passes on `main`, create a reviewed Git tag and GitHub Release. Consumers pin that immutable commit and adopt it in their own focused change. There is no package publishing, consumer manifest, or cross-repository notification automation; see the concise [release policy](./docs/release-policy.md).
+Run the `Release` workflow manually from GitHub Actions. The first run creates or updates a Release Please PR; after that PR is reviewed and merged, run the workflow again to create the version tag and GitHub Release. Publishing the release triggers the consumer-notification workflow, which reads [`harness/consumers.json`](./harness/consumers.json) and opens an adoption issue for each configured repository. See the [release policy](./docs/release-policy.md) for credentials, preview, and rollback.
 
 ## Agent skill
 

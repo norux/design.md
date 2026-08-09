@@ -3,7 +3,7 @@
 ## Unreleased
 
 - Define transparent, surface-aware icon treatment and a styled accessible Select contract for `norux/dev`.
-- Keep only the CSS token output used by consumers and remove release/consumer notification automation.
+- Keep only the CSS token output used by consumers while preserving release and consumer-notification automation.
 - Make the `norux-design` skill portable with bundled foundations, component contracts, adoption guidance, and CSS tokens.
 - Make `docs/components/README.md` the single component-contract source and generate the skill reference from it.
 
