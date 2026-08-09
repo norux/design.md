@@ -1,3 +1,5 @@
+<!-- Generated from docs/components/README.md. Do not edit. -->
+
 # Component authoring
 
 The initial set is: Button, IconButton, Link, PrimaryNavigation, Input/SearchField, Select, Dialog, Popover, Tag, Card/ListItem, Breadcrumb, TableOfContents, CodeBlock treatment, Theme control, and empty/loading/error states.

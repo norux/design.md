@@ -1,6 +1,6 @@
 # norux design system
 
-The normative source is [DESIGN.md](./DESIGN.md). It combines machine-readable YAML tokens with concise human rules for people and agents.
+The source of truth is [DESIGN.md](./DESIGN.md). It combines machine-readable YAML tokens with concise rules for people and agents.
 
 ## Use tokens
 
@@ -27,14 +27,16 @@ The registry deliberately contains only the framework-neutral base. React compon
 pnpm check
 ```
 
-This validates the design source, contrast targets, registry shape, tests, and generated-artifact drift. See [validation notes](./docs/foundations/validation.md) for the upstream `design.md` compatibility decision.
+This runs the official Google `design.md` linter, contrast checks, CSS generation, registry validation, and focused tests. See [validation notes](./docs/foundations/validation.md) for the one Norux-specific extension.
 
 See the [release policy](./docs/release-policy.md) and the focused [`norux/dev` migration](./docs/migrations/norux-dev.md) before adopting a revision.
 
-## Release changes
+## Release
 
-Running the `Release` workflow manually collects Conventional `feat:` and `fix:` commits into a release PR. After reviewing and merging that PR, run the workflow again to create the version tag and GitHub Release. The published release opens an adoption issue for each repository in [`harness/consumers.json`](./harness/consumers.json). See the [release policy](./docs/release-policy.md) for required repository secrets, verification, and rollback.
+After `pnpm check` passes on `main`, create a reviewed Git tag and GitHub Release. Consumers pin that immutable commit and adopt it in their own focused change. There is no package publishing, consumer manifest, or cross-repository notification automation; see the concise [release policy](./docs/release-policy.md).
 
 ## Agent skill
 
-Install or copy [`skills/norux-design`](./skills/norux-design) into the local Codex skills directory, then invoke `$norux-design`. It guides token selection, component documentation, verification, and intentional consumer exceptions without requiring a package registry or custom MCP.
+Install or copy [`skills/norux-design`](./skills/norux-design) into the local Codex skills directory, then invoke `$norux-design`. The skill is self-contained: it bundles the visual foundations, component contracts, adoption workflow, and canonical CSS needed in a repository that does not contain this repository's `DESIGN.md` or docs.
+
+[`docs/components/README.md`](./docs/components/README.md) is the only editable component-contract source. `pnpm generate` updates the skill's portable copy, and `pnpm artifacts:check` rejects drift.

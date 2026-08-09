@@ -63,17 +63,6 @@ export function asString(value: DesignValue, name: string) {
   return value;
 }
 
-export function sortMap(value: DesignValue): DesignValue {
-  if (Array.isArray(value)) return value.map(sortMap);
-  if (!isMap(value)) return value;
-
-  return Object.fromEntries(
-    Object.entries(value)
-      .sort(([left], [right]) => left.localeCompare(right))
-      .map(([key, item]) => [key, sortMap(item)])
-  );
-}
-
 export function flatten(value: DesignValue, path: string[] = []): Array<{ path: string[]; value: string | number | boolean }> {
   if (!isMap(value)) {
     if (Array.isArray(value)) return [];

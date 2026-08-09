@@ -8,20 +8,17 @@
     "node": ">=24"
   },
   "scripts": {
-    "artifacts:check": "pnpm generate && git diff --exit-code -- packages/tokens/css/norux.css packages/tokens/src/norux.tokens.json packages/tokens/ts/index.ts registry/norux-base/norux.css",
+    "artifacts:check": "tsx scripts/generate-tokens.ts --check && tsx scripts/generate-skill-reference.ts --check",
     "brand:check": "pnpm brand:export && git diff --exit-code -- brand",
     "brand:export": "tsx scripts/export-brand.ts",
-    "check": "pnpm design:lint && pnpm contrast && pnpm artifacts:check && pnpm registry:validate && pnpm test && pnpm brand:check",
-    "check:ci": "pnpm design:lint && pnpm contrast && pnpm artifacts:check && pnpm registry:validate && pnpm test",
-    "consumers:preview": "tsx scripts/notify-consumers.ts --dry-run",
+    "check": "pnpm design:lint && pnpm contrast && pnpm artifacts:check && pnpm registry:validate && pnpm typecheck && pnpm test && pnpm brand:check",
+    "check:ci": "pnpm design:lint && pnpm contrast && pnpm artifacts:check && pnpm registry:validate && pnpm typecheck && pnpm test",
     "contrast": "tsx scripts/check-contrast.ts",
-    "design:lint": "pnpm validate",
-    "design:lint:google": "design.md lint DESIGN.md",
-    "generate": "tsx scripts/generate-tokens.ts",
+    "design:lint": "design.md lint DESIGN.md",
+    "generate": "tsx scripts/generate-tokens.ts && tsx scripts/generate-skill-reference.ts",
     "registry:validate": "shadcn registry validate",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit",
-    "validate": "tsx scripts/validate-design.ts && pnpm typecheck"
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@google/design.md": "0.4.0",

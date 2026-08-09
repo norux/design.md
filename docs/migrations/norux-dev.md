@@ -26,6 +26,8 @@ Map the existing blog roles as follows:
 | `--accent-strong` | `--norux-color-action-primary` |
 | focus outline | `--norux-color-focus-ring` |
 
-Before merging the consumer migration, run its existing checks and manually test keyboard navigation, mobile header navigation, search announcement, 200% zoom, and both color themes. Replace the blog's current favicon with [the canonical favicon](../../brand/logo/norux-favicon.svg) in that focused consumer change and verify its browser rendering separately.
+Apply the canonical [IconButton](../components/README.md#iconbutton) and [Select](../components/README.md#select) contracts. In `norux/dev`, replace existing icon assets that contain baked backgrounds and expose each ordinary sort/filter control through a local native `SelectField` wrapper. No consumer-specific visual override is currently required.
+
+Before merging the consumer migration, run its existing checks and manually test transparent icon edges, select keyboard navigation, mobile header navigation, search announcement, 200% zoom, and both color themes. Replace the blog's current favicon with [the canonical favicon](../../brand/logo/norux-favicon.svg) in that focused consumer change and verify its browser rendering separately.
 
 The current consumer rule `@media (max-width: 900px) { .site-header nav { display: none; } }` removes the only primary-navigation path. Replace it in a focused consumer change with the documented `PrimaryNavigation` compact trigger and panel before treating the responsive migration as complete. Preserve the same destinations, expose open state, support Escape and focus return, and verify at 320px and 200% zoom.

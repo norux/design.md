@@ -10,9 +10,10 @@ pnpm artifacts:check
 Generated outputs:
 
 - `packages/tokens/css/norux.css` for CSS consumers.
-- `packages/tokens/ts/index.ts` for TypeScript consumers.
-- `packages/tokens/src/norux.tokens.json` for DTCG-oriented tools.
 - `registry/norux-base/norux.css` for the public shadcn source registry.
+- `skills/norux-design/assets/norux.css` for portable skill adoption.
+
+Only CSS is generated because it is the format used by the current consumer. Add another output only when a real consumer requires it.
 
 Use semantic values such as `--norux-color-background-canvas` and `--norux-color-action-primary`. Palette values are for token construction only; consumer UI must not use them directly.
 

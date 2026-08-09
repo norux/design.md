@@ -22,11 +22,17 @@
       p, label { font-size: var(--norux-typography-body-md-font-size); line-height: var(--norux-typography-body-md-line-height); }
       .muted { color: var(--norux-color-foreground-muted); }
       .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--norux-space-3); }
-      button, input { font: inherit; }
+      button, input, select { font: inherit; }
       button { min-height: var(--norux-size-control-touch); padding: 0 var(--norux-space-4); border-radius: var(--norux-radius-md); border: var(--norux-border-width) solid var(--norux-color-border-strong); background: var(--norux-color-background-surface); color: var(--norux-color-foreground-primary); }
       button.primary { background: var(--norux-color-action-primary); border-color: var(--norux-color-action-primary); color: var(--norux-color-action-on-primary); }
       button:disabled { opacity: .55; cursor: not-allowed; }
       input { width: 100%; min-height: var(--norux-size-control-touch); padding: 0 var(--norux-space-3); border: var(--norux-border-width) solid var(--norux-color-border-strong); border-radius: var(--norux-radius-md); background: var(--norux-color-background-surface); color: var(--norux-color-foreground-primary); }
+      .icon-button { display: inline-grid; width: var(--norux-size-control-touch); padding: 0; place-items: center; color: var(--norux-color-foreground-muted); background: transparent; border-color: transparent; }
+      .icon-button:hover { color: var(--norux-color-action-primary); background: var(--norux-color-action-soft); }
+      .icon-button svg { width: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; }
+      .select-control { position: relative; margin-top: var(--norux-space-1); }
+      .select-control select { width: 100%; min-height: var(--norux-size-control-touch); appearance: none; padding: 0 var(--norux-space-6) 0 var(--norux-space-3); color: var(--norux-color-foreground-primary); background: var(--norux-color-background-surface); border: var(--norux-border-width) solid var(--norux-color-border-strong); border-radius: var(--norux-radius-md); }
+      .select-control svg { position: absolute; top: 50%; right: var(--norux-space-3); width: 20px; pointer-events: none; transform: translateY(-50%); fill: none; stroke: currentColor; }
       .tag { padding: var(--norux-space-1) var(--norux-space-2); border-radius: var(--norux-radius-full); background: var(--norux-color-action-soft); color: var(--norux-color-action-primary); font-size: var(--norux-typography-label-sm-font-size); font-weight: var(--norux-typography-label-sm-font-weight); }
       pre { overflow: auto; margin: 0; padding: var(--norux-space-4); border-radius: var(--norux-radius-md); background: var(--norux-color-background-code); color: var(--norux-color-foreground-primary); font-family: var(--norux-font-mono); font-size: var(--norux-typography-code-md-font-size); line-height: var(--norux-typography-code-md-line-height); }
       .status { border-left: 4px solid var(--norux-color-feedback-positive); padding-left: var(--norux-space-3); }
@@ -51,11 +57,13 @@
           <section>
             <h2>Actions</h2>
             <div class="row"><button class="primary" type="button">Save changes</button><button type="button">Cancel</button><button type="button" disabled>Loading…</button></div>
+            <p class="muted">Icons inherit the current surface.</p>
+            <button class="icon-button" type="button" aria-label="Open settings"><svg aria-hidden="true" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" /><path d="M10 2.5v2m0 11v2m7.5-7.5h-2m-11 0h-2m12.8-5.3-1.4 1.4M6.1 13.9l-1.4 1.4m10.6 0-1.4-1.4M6.1 6.1 4.7 4.7" /></svg></button>
           </section>
           <section>
-            <h2>Search</h2>
-            <label>Search articles <input type="search" placeholder="Search articles…" /></label>
-            <p class="muted" role="status">8 results</p>
+            <h2>Fields</h2>
+            <label for="sort">Sort by</label>
+            <div class="select-control"><select id="sort"><option>Newest</option><option>Oldest</option></select><svg aria-hidden="true" viewBox="0 0 20 20"><path d="m6 8 4 4 4-4" /></svg></div>
           </section>
           <section>
             <h2>Content</h2>
