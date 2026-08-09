@@ -12,9 +12,11 @@ Until the first consumer migration is accepted, changes are `0.x`:
 
 Use Conventional Commits for every change. `feat:` produces a minor release, `fix:` produces a patch release, and a `!` or `BREAKING CHANGE` footer produces a major release. Performance improvements and reverts receive their own release-note sections. Build, chore, CI, documentation, refactor, style, and test commits stay out of release notes and do not create a release by themselves.
 
-## Automated release
+## Manual release
 
-`.github/workflows/release.yml` uses Release Please to keep one release PR current. Merging that PR updates `CHANGELOG.md` and `package.json`, creates an immutable `v<version>` tag, and publishes a GitHub Release. It never publishes the private npm package.
+`.github/workflows/release.yml` runs only when a maintainer starts the `Release` workflow from GitHub Actions. A push to `main` never starts a release.
+
+Run the workflow once to make Release Please create or update the release PR. Review and merge that PR, then run the same workflow a second time to create the immutable `v<version>` tag and publish the GitHub Release. The second manual run is the explicit release approval. It never publishes the private npm package.
 
 The initial automation baseline is version `0.1.0` at commit `6f39ed653456224e835d9ff5c5809f86d79a0bc8`. Do not rewrite that commit or a published tag.
 

@@ -33,7 +33,7 @@ See the [release policy](./docs/release-policy.md) and the focused [`norux/dev` 
 
 ## Release changes
 
-Conventional `feat:` and `fix:` commits feed an automated release PR. Merging that PR updates `CHANGELOG.md`, creates a version tag and GitHub Release, then opens an adoption issue for each repository in [`harness/consumers.json`](./harness/consumers.json). See the [release policy](./docs/release-policy.md) for required repository secrets, verification, and rollback.
+Running the `Release` workflow manually collects Conventional `feat:` and `fix:` commits into a release PR. After reviewing and merging that PR, run the workflow again to create the version tag and GitHub Release. The published release opens an adoption issue for each repository in [`harness/consumers.json`](./harness/consumers.json). See the [release policy](./docs/release-policy.md) for required repository secrets, verification, and rollback.
 
 ## Agent skill
 

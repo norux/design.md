@@ -36,4 +36,11 @@ describe("release automation", () => {
     expect(notifyWorkflow).toContain("secrets.CONSUMER_ISSUES_TOKEN");
     expect(notifyWorkflow).toContain("node scripts/notify-consumers.ts");
   });
+
+  it("starts releases only when a maintainer runs the workflow", async () => {
+    const releaseWorkflow = await readFile(".github/workflows/release.yml", "utf8");
+
+    expect(releaseWorkflow).toContain("workflow_dispatch:");
+    expect(releaseWorkflow).not.toContain("\n  push:");
+  });
 });
