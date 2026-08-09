@@ -1,0 +1,4 @@
+interface:
+  display_name: "norux Design"
+  short_description: "Apply norux tokens and accessible UI rules."
+  default_prompt: "Use $norux-design to apply the norux design system to this change."

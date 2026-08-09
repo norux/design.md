@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Norux foundations fixture</title>
+    <link rel="stylesheet" href="../packages/tokens/css/norux.css" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--norux-color-background-canvas); color: var(--norux-color-foreground-primary); font-family: var(--norux-font-sans); }
+      a { color: var(--norux-color-action-primary); text-underline-offset: .18em; }
+      :focus-visible { outline: var(--norux-focus-width) solid var(--norux-color-focus-ring); outline-offset: var(--norux-focus-offset); }
+      .shell { width: min(100% - 32px, var(--norux-size-page-max)); margin: auto; padding: var(--norux-space-6) 0; }
+      header { display: flex; justify-content: space-between; gap: var(--norux-space-4); align-items: center; border-bottom: var(--norux-border-width) solid var(--norux-color-border-subtle); padding-bottom: var(--norux-space-4); }
+      .wordmark { width: 142px; height: auto; }
+      main { display: grid; gap: var(--norux-space-6); padding-top: var(--norux-space-6); }
+      .grid { display: grid; gap: var(--norux-space-4); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      section { padding: var(--norux-space-5); background: var(--norux-color-background-surface); border: var(--norux-border-width) solid var(--norux-color-border-subtle); border-radius: var(--norux-radius-lg); }
+      h1, h2, p { margin-top: 0; }
+      h1 { font-size: var(--norux-typography-display-md-font-size); line-height: var(--norux-typography-display-md-line-height); letter-spacing: var(--norux-typography-display-md-letter-spacing); }
+      h2 { font-size: var(--norux-typography-heading-md-font-size); line-height: var(--norux-typography-heading-md-line-height); }
+      p, label { font-size: var(--norux-typography-body-md-font-size); line-height: var(--norux-typography-body-md-line-height); }
+      .muted { color: var(--norux-color-foreground-muted); }
+      .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--norux-space-3); }
+      button, input { font: inherit; }
+      button { min-height: var(--norux-size-control-touch); padding: 0 var(--norux-space-4); border-radius: var(--norux-radius-md); border: var(--norux-border-width) solid var(--norux-color-border-strong); background: var(--norux-color-background-surface); color: var(--norux-color-foreground-primary); }
+      button.primary { background: var(--norux-color-action-primary); border-color: var(--norux-color-action-primary); color: var(--norux-color-action-on-primary); }
+      button:disabled { opacity: .55; cursor: not-allowed; }
+      input { width: 100%; min-height: var(--norux-size-control-touch); padding: 0 var(--norux-space-3); border: var(--norux-border-width) solid var(--norux-color-border-strong); border-radius: var(--norux-radius-md); background: var(--norux-color-background-surface); color: var(--norux-color-foreground-primary); }
+      .tag { padding: var(--norux-space-1) var(--norux-space-2); border-radius: var(--norux-radius-full); background: var(--norux-color-action-soft); color: var(--norux-color-action-primary); font-size: var(--norux-typography-label-sm-font-size); font-weight: var(--norux-typography-label-sm-font-weight); }
+      pre { overflow: auto; margin: 0; padding: var(--norux-space-4); border-radius: var(--norux-radius-md); background: var(--norux-color-background-code); color: var(--norux-color-foreground-primary); font-family: var(--norux-font-mono); font-size: var(--norux-typography-code-md-font-size); line-height: var(--norux-typography-code-md-line-height); }
+      .status { border-left: 4px solid var(--norux-color-feedback-positive); padding-left: var(--norux-space-3); }
+      .status.error { border-left-color: var(--norux-color-feedback-negative); }
+      dialog { color: var(--norux-color-foreground-primary); background: var(--norux-color-background-surface); border: var(--norux-border-width) solid var(--norux-color-border-strong); border-radius: var(--norux-radius-lg); box-shadow: var(--norux-shadow-overlay); }
+      @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } .shell { width: min(100% - 28px, var(--norux-size-page-max)); } }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <img class="wordmark" data-wordmark src="../brand/logo/norux-wordmark.svg" alt="norux." />
+        <button type="button" data-theme-control aria-pressed="false">Theme: light</button>
+      </header>
+      <main>
+        <section>
+          <p class="tag">Foundation fixture</p>
+          <h1>Calm, visible, and accessible state.</h1>
+          <p class="muted">Open with <code>?theme=dark</code> to verify the independent dark semantic assignments.</p>
+        </section>
+        <div class="grid">
+          <section>
+            <h2>Actions</h2>
+            <div class="row"><button class="primary" type="button">Save changes</button><button type="button">Cancel</button><button type="button" disabled>Loading…</button></div>
+          </section>
+          <section>
+            <h2>Search</h2>
+            <label>Search articles <input type="search" placeholder="Search articles…" /></label>
+            <p class="muted" role="status">8 results</p>
+          </section>
+          <section>
+            <h2>Content</h2>
+            <p><a href="#fixture">Read the documentation</a></p>
+            <pre><code>const theme = "visible";</code></pre>
+          </section>
+        </div>
+        <div class="grid">
+          <section class="status"><h2>Ready</h2><p class="muted">The design source and generated artifacts agree.</p></section>
+          <section class="status error"><h2>Unable to search</h2><p class="muted">Try again after checking the network connection.</p></section>
+          <section><h2>Dialog</h2><button type="button" data-dialog-open>Open dialog</button><dialog data-dialog aria-labelledby="dialog-title"><h2 id="dialog-title">Visible state</h2><p>Dialogs name their purpose and return focus to the trigger.</p><button type="button" data-dialog-close>Close</button></dialog></section>
+        </div>
+      </main>
+    </div>
+    <script>
+      const query = new URLSearchParams(location.search);
+      const theme = query.get("theme") === "dark" ? "dark" : "light";
+      document.documentElement.dataset.theme = theme;
+      const control = document.querySelector("[data-theme-control]");
+      const wordmark = document.querySelector("[data-wordmark]");
+      const dialog = document.querySelector("[data-dialog]");
+      const opener = document.querySelector("[data-dialog-open]");
+      control.textContent = `Theme: ${theme}`;
+      control.setAttribute("aria-pressed", String(theme === "dark"));
+      wordmark.src = theme === "dark" ? "../brand/logo/norux-wordmark-inverse.svg" : "../brand/logo/norux-wordmark.svg";
+      control.addEventListener("click", () => location.search = theme === "dark" ? "?theme=light" : "?theme=dark");
+      opener.addEventListener("click", () => dialog.showModal());
+      dialog.querySelector("[data-dialog-close]").addEventListener("click", () => dialog.close());
+    </script>
+  </body>
+</html>

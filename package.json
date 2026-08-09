@@ -1,0 +1,34 @@
+{
+  "name": "@norux/design",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.5.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "artifacts:check": "pnpm generate && git diff --exit-code -- packages/tokens/css/norux.css packages/tokens/src/norux.tokens.json packages/tokens/ts/index.ts registry/norux-base/norux.css",
+    "brand:check": "pnpm brand:export && git diff --exit-code -- brand",
+    "brand:export": "tsx scripts/export-brand.ts",
+    "check": "pnpm design:lint && pnpm contrast && pnpm artifacts:check && pnpm registry:validate && pnpm test && pnpm brand:check",
+    "check:ci": "pnpm design:lint && pnpm contrast && pnpm artifacts:check && pnpm registry:validate && pnpm test",
+    "contrast": "tsx scripts/check-contrast.ts",
+    "design:lint": "pnpm validate",
+    "design:lint:google": "design.md lint DESIGN.md",
+    "generate": "tsx scripts/generate-tokens.ts",
+    "registry:validate": "shadcn registry validate",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "validate": "tsx scripts/validate-design.ts && pnpm typecheck"
+  },
+  "devDependencies": {
+    "@google/design.md": "0.4.0",
+    "@types/node": "24.10.1",
+    "shadcn": "4.16.2",
+    "tsx": "4.23.11",
+    "typescript": "5.9.3",
+    "vitest": "4.1.10",
+    "yaml": "2.9.0"
+  }
+}
