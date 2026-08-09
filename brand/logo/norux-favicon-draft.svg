@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">norux compact mark draft</title>
+  <rect width="64" height="64" rx="14" fill="#121619"/>
+  <path fill="#F7F7F4" d="M14 18h8v4.1c3-3.4 6.8-5.1 11.2-5.1 8.7 0 14.8 6 14.8 16.1V47h-8.5V34.2c0-6.3-2.8-9.5-8.1-9.5-5.7 0-8.9 3.8-8.9 10.6V47H14V18Z"/>
+  <circle cx="54" cy="43" r="4" fill="#4A8DE0"/>
+</svg>

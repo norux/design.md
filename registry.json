@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "norux",
+  "homepage": "https://github.com/norux/design.md",
+  "items": [
+    {
+      "name": "norux-base",
+      "type": "registry:base",
+      "title": "Norux base tokens",
+      "description": "Norux light and dark CSS tokens with accessible focus, control, and motion foundations.",
+      "files": [
+        {
+          "path": "registry/norux-base/norux.css",
+          "type": "registry:style"
+        }
+      ],
+      "docs": "Import the installed norux.css once at the application root. This item supplies tokens only; it does not add React or Tailwind."
+    }
+  ]
+}
