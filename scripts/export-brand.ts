@@ -6,7 +6,7 @@ const exports = [
   ["brand/social/norux-social.svg", "brand/social/norux-social.png"],
   ["brand/logo/norux-wordmark.svg", "brand/logo/norux-wordmark.png"],
   ["brand/logo/norux-app-icon.svg", "brand/logo/norux-app-icon.png"],
-  ["brand/logo/norux-favicon-draft.svg", "brand/logo/norux-favicon-draft.png"]
+  ["brand/logo/norux-favicon.svg", "brand/logo/norux-favicon.png"]
 ] as const;
 
 for (const [source, output] of exports) {

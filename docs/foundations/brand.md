@@ -11,15 +11,16 @@
 | Monochrome | `brand/logo/norux-wordmark-mono.svg` | Use only when a one-color reproduction is required. |
 | Compact mark | `brand/logo/norux-mark.svg` | Use where the full wordmark is too small. |
 | App icon | `brand/logo/norux-app-icon.svg` | Use for app, repository, and avatar contexts. |
+| Favicon | `brand/logo/norux-favicon.svg` | Use for browser and bookmark identity. |
 | Social card | `brand/social/norux-social.svg` | Use as the master for 1200×630 social exports. |
 
 Use the full wordmark at 96px CSS width or wider. Below that, use the compact mark at 24px or wider. Keep clear space equal to the period diameter on every side. Use only plain `background.canvas`, `background.surface`, or `background.canvas` dark backgrounds; preserve 3:1 contrast for the blue period against its background.
 
 Do not stretch, recolor, add a shadow, use a gradient, change the period’s position, add punctuation, write `Norux`, or construct a substitute with a font at runtime.
 
-## Favicon draft
+## Favicon
 
-`brand/logo/norux-favicon-draft.svg` is a replacement proposal for the existing `norux/dev` favicon. It uses the approved separated `n.` construction and the canonical blue period. It is not a consumer migration instruction: review it visually before replacing `norux/dev/public/favicon.svg`.
+`brand/logo/norux-favicon.svg` is the canonical favicon. It uses the approved separated `n.` construction and the canonical blue period. Consumer adoption remains a focused migration so each product can update and verify its favicon independently.
 
 SVG files are deterministic source masters. Generate and verify the committed PNG exports with:
 

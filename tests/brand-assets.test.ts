@@ -5,7 +5,7 @@ const compactPath = "M14 18h8v4.1c3-3.4 6.8-5.1 11.2-5.1 8.7 0 14.8 6 14.8 16.1V
 
 describe("brand assets", () => {
   it("keeps the compact period separate from the n", async () => {
-    const files = ["brand/logo/norux-mark.svg", "brand/logo/norux-app-icon.svg", "brand/logo/norux-favicon-draft.svg"];
+    const files = ["brand/logo/norux-mark.svg", "brand/logo/norux-app-icon.svg", "brand/logo/norux-favicon.svg"];
 
     for (const file of files) {
       const svg = await readFile(file, "utf8");

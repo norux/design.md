@@ -14,4 +14,4 @@ Update `CHANGELOG.md` for every consumer-visible change. Never overwrite a previ
 
 ## Consumer release
 
-The first consumer is `norux/dev`. A consumer release needs a reviewed commit, the exact migration command in `docs/migrations/norux-dev.md`, the consumer's own checks, visual checks in light and dark themes, and an explicit favicon decision. It does not publish an npm package, host a registry, or add credentials.
+The first consumer is `norux/dev`. A consumer release needs a reviewed commit, the exact migration command in `docs/migrations/norux-dev.md`, the consumer's own checks, visual checks in light and dark themes, and separate verification of the canonical favicon. It does not publish an npm package, host a registry, or add credentials.
