@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.0 - 2026-08-09
 
 - Add the `norux` token source, deterministic CSS and TypeScript outputs, contrast gate, and a narrow shadcn source registry.
 - Define lowercase `norux.` wordmark variants and approve the compact favicon.

@@ -23,6 +23,8 @@ pnpm check
 
 Run `pnpm registry:validate` when editing `registry.json`. Run `pnpm artifacts:check` after changing `DESIGN.md` to prove generated CSS, DTCG JSON, TypeScript, and registry CSS are current.
 
+For a consumer-visible change, use a `feat:` or `fix:` commit as appropriate. Preview the downstream adoption issue with `pnpm consumers:preview`; release automation creates the real issue only after a reviewed GitHub Release is published.
+
 ## Brand rules
 
 - Write `norux` in lowercase.

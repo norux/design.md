@@ -1,0 +1,14 @@
+{
+  "consumers": [
+    {
+      "repository": "norux/dev",
+      "instructions": "AGENTS.md",
+      "designNotes": "docs/DESIGN-BRIEF.md",
+      "verification": [
+        "pnpm check",
+        "pnpm test",
+        "pnpm build"
+      ]
+    }
+  ]
+}

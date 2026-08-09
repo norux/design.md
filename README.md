@@ -31,6 +31,10 @@ This validates the design source, contrast targets, registry shape, tests, and g
 
 See the [release policy](./docs/release-policy.md) and the focused [`norux/dev` migration](./docs/migrations/norux-dev.md) before adopting a revision.
 
+## Release changes
+
+Conventional `feat:` and `fix:` commits feed an automated release PR. Merging that PR updates `CHANGELOG.md`, creates a version tag and GitHub Release, then opens an adoption issue for each repository in [`harness/consumers.json`](./harness/consumers.json). See the [release policy](./docs/release-policy.md) for required repository secrets, verification, and rollback.
+
 ## Agent skill
 
 Install or copy [`skills/norux-design`](./skills/norux-design) into the local Codex skills directory, then invoke `$norux-design`. It guides token selection, component documentation, verification, and intentional consumer exceptions without requiring a package registry or custom MCP.
