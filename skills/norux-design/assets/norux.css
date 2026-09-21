@@ -96,6 +96,8 @@
   --norux-color-background-surface: #FFFFFF;
   --norux-color-border-strong: #84919A;
   --norux-color-border-subtle: #DCE2E6;
+  --norux-color-data-estimate: #A94718;
+  --norux-color-data-estimate-fill: #FFBB8D;
   --norux-color-feedback-negative: #A42D3A;
   --norux-color-feedback-negative-soft: #FBEAEC;
   --norux-color-feedback-positive: #20744A;
@@ -123,6 +125,8 @@
   --norux-color-background-surface: #181E22;
   --norux-color-border-strong: #65727C;
   --norux-color-border-subtle: #2B343B;
+  --norux-color-data-estimate: #FFBB8D;
+  --norux-color-data-estimate-fill: #FFBB8D;
   --norux-color-feedback-negative: #F29BA5;
   --norux-color-feedback-negative-soft: #481F27;
   --norux-color-feedback-positive: #6DD89B;

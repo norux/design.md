@@ -37,6 +37,8 @@ colors:
   red-300: "#F29BA5"
   red-700: "#A42D3A"
   red-950: "#481F27"
+  apricot-300: "#FFBB8D"
+  apricot-700: "#A94718"
   amber-100: "#FFF4D6"
   amber-300: "#F2C76D"
   amber-700: "#8A5A00"
@@ -154,6 +156,9 @@ norux:
           negative-soft: "{colors.red-100}"
           warning: "{colors.amber-700}"
           warning-soft: "{colors.amber-100}"
+        data:
+          estimate: "{colors.apricot-700}"
+          estimate-fill: "{colors.apricot-300}"
         selection: "{colors.blue-150}"
     dark:
       color:
@@ -185,6 +190,9 @@ norux:
           negative-soft: "{colors.red-950}"
           warning: "{colors.amber-300}"
           warning-soft: "{colors.amber-950}"
+        data:
+          estimate: "{colors.apricot-300}"
+          estimate-fill: "{colors.apricot-300}"
         selection: "{colors.blue-850}"
   font:
     sans: "'Pretendard Variable', Pretendard, 'Noto Sans KR', system-ui, sans-serif"
@@ -219,6 +227,14 @@ norux:
     modal: 200
   accessibility:
     contrast:
+      - name: light-estimate-text
+        foreground: "{norux.themes.light.color.data.estimate}"
+        background: "{norux.themes.light.color.background.surface}"
+        minimum: 4.5
+      - name: dark-estimate-text
+        foreground: "{norux.themes.dark.color.data.estimate}"
+        background: "{norux.themes.dark.color.background.surface}"
+        minimum: 4.5
       - name: light-primary-text
         foreground: "{norux.themes.light.color.foreground.primary}"
         background: "{norux.themes.light.color.background.canvas}"
@@ -280,6 +296,8 @@ norux interfaces are calm, direct, readable, and low-noise. State and available 
 The frontmatter is the normative token source. Use semantic theme roles from `norux.themes`, not palette values, in product code. Light and dark themes are independent semantic assignments; do not invert a light palette mechanically.
 
 Use `action.primary` for an explicit action or a text link. Use `action.soft` for selection and quiet emphasis. Use `focus.ring` only for focus visibility. Use `border.strong` for the visible boundary of an input or a control. Feedback colors must always pair with a text label or icon—never color alone.
+
+Use `data.estimate` for estimated-value labels and `data.estimate-fill` for their apricot chart fills. Keep the visible estimate label beside the chart; translucent fills are supplementary to the numeric value, not status or warning colors.
 
 ## Typography
 
